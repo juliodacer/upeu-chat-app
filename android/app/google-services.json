@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1065195172921",
+    "project_id": "upeu-chat-app",
+    "storage_bucket": "upeu-chat-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1065195172921:android:c0d80bcb3c3daef518c9e8",
+        "android_client_info": {
+          "package_name": "com.example.upeu_chat_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1065195172921-r8a8h2eol1ohnut70vvu18nkcq2ssctb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.upeu_chat_app",
+            "certificate_hash": "a58aa69f3e990d56754d05edd1a3ee89ebeeb6de"
+          }
+        },
+        {
+          "client_id": "1065195172921-atcmrf45sgbk707iilqi4vll3hnirbpf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHiJYC_ZfR0GpFCssu7l6VJxczBMpGnSs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1065195172921-atcmrf45sgbk707iilqi4vll3hnirbpf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
