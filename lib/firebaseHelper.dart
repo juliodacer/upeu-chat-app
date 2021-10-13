@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:upeu_chat_app/chatScreen.dart';
+import 'package:upeu_chat_app/login.dart';
 
 class Service {
   final auth = FirebaseAuth.instance;
@@ -38,7 +39,12 @@ class Service {
   //Cerrar sesión
   void signOut(context) async {
     try {
-      await auth.signOut();
+      await auth.signOut().then((value) => {
+            Navigator.pushAndRemoveUntil(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()),
+                (route) => false)
+          });
     } catch (e) {
       errorBox(context, e);
     }
