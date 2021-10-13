@@ -44,7 +44,7 @@ class RegisterPage extends StatelessWidget {
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25)
                     ),
-                      helperText: "tucorreo@eejemplo.com"
+                      helperText: "tucorreo@ejemplo.com"
                     ),
           ),
                   SizedBox(height: 15,),
@@ -52,7 +52,6 @@ class RegisterPage extends StatelessWidget {
                     obscureText: true,
                     controller: passwordController,
                     keyboardType: TextInputType.text,
-                    validator: (val)  => val!.isEmpty? "Ingrese una contraseña" : null,
                     decoration: InputDecoration(
                         labelText: "Contraseña",
                         border: OutlineInputBorder(
@@ -77,8 +76,12 @@ class RegisterPage extends StatelessWidget {
                           ),
                       ),
                       onPressed: () {
-                        if(_formKey.currentState!.validate()){
-
+                        //Si el correo y la contraseña no estan vacias
+                        if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty){
+                          service.createUser(context, emailController.text, passwordController.text);
+                        }else {
+                          //Si estan los campos vacios mostrará un mensaje de advertencia
+                          service.errorBox(context, "los campos no deben estar vacíos, ingrese un correo electrónico y una contraseña válidos");
                         }
                       },
                     ),
