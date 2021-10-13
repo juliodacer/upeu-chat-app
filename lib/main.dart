@@ -3,9 +3,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:upeu_chat_app/login.dart';
 
-void main() async {
-  ///Inicializar firebase
-  ///también agregue multi Dex en el gradle
+main() async {
+  //Inicializar firebase
+  //también agregue multi Dex en el gradle
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MaterialApp(

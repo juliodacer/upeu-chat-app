@@ -6,69 +6,85 @@ class RegisterPage extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
-  ///instancia de la clase Service
+  final _formKey = GlobalKey<FormState>();
+
+  //instancia de la clase Service
   Service service = Service();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-          child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25),
+        body: Container(
+          margin: EdgeInsets.only(left: 20, right: 20),
+            child: Form(
+              key: _formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Regístrate",
-                    style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    "UPeU Chat App",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                  Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Ingrese su email",
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20)
-                            )
-                        ),
+                children: <Widget>[
+                  SizedBox(height: 20),
+                  Text("Regístrate", style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),),
+                  Center(
+                    child: Card(
+                      child: SizedBox(
+                        width: 70,
+                        height: 70,
+                        child: FlutterLogo()
                       )
+                    )
                   ),
-                  Padding(
-                      padding: const EdgeInsets.only(top: 15, bottom: 15),
-                      child: TextField(
-                        decoration: InputDecoration(
-                            hintText: "Ingrese su contraseña",
-                            border: OutlineInputBorder(
-                                borderRadius: BorderRadius.circular(20)
-                            )
+                  Text("UPeU Chat", style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),),
+                  SizedBox(height: 20,),
+                  TextFormField(
+                    controller: emailController,
+                    autofocus: true,
+                    autocorrect: true,
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: InputDecoration(
+                    labelText: "Correo Electrónico",
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25)
+                    ),
+                      helperText: "tucorreo@eejemplo.com"
+                    ),
+          ),
+                  SizedBox(height: 15,),
+                  TextFormField(
+                    obscureText: true,
+                    controller: passwordController,
+                    keyboardType: TextInputType.text,
+                    validator: (val)  => val!.isEmpty? "Ingrese una contraseña" : null,
+                    decoration: InputDecoration(
+                        labelText: "Contraseña",
+                        border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(25)
                         ),
-                      )
+                    ),
                   ),
-                  ElevatedButton(
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.symmetric(horizontal: 80),
+                  SizedBox(height: 20),
+                  SizedBox(
+                    width: 400,
+                    height: 55,
+                    child:RaisedButton(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20)
+                      ),
+                      color: Colors.blue,
+                      child: Text(
+                          "Registrar",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18
+                          ),
                       ),
                       onPressed: () {
-                        ///Si el correo y la contraseña no estan vacias
-                          if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty){
-                              service.createUser(context, emailController.text, passwordController.text);
-                          }else {
-                            ///Si estan los campos vacios mostrará un mensaje de advertencia
-                            service.errorBox(context, "los campos no deben estar vacíos, ingrese un correo electrónico y una contraseña válidos");
-                          }
+                        if(_formKey.currentState!.validate()){
+
+                        }
                       },
-                      child: Text("Registrarse")),
-                  TextButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginPage()));
-                  }, child: Text("Tengo una cuenta, inicar sesión"))
-                ],
-              )
-          ),
-        )
-    );
+                    ),
+                  )
+        ],
+      ),
+    )));
   }
 }

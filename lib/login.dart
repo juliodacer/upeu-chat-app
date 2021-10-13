@@ -51,12 +51,12 @@ class LoginPage extends StatelessWidget {
                       style: TextButton.styleFrom(
                         padding: EdgeInsets.symmetric(horizontal: 80),
                       ),
-                      onPressed: () {
-                        ///Si el correo y la contraseña no estan vacias
+                      onPressed: ()  {
+                        //Si el correo y la contraseña no estan vacias
                         if(emailController.text.isNotEmpty && passwordController.text.isNotEmpty){
                           service.loginUser(context, emailController.text, passwordController.text);
                         }else {
-                          ///Si estan los campos vacios mostrará un mensaje de advertencia
+                          //Si estan los campos vacios mostrará un mensaje de advertencia
                           service.errorBox(context, "los campos no deben estar vacíos, ingrese un correo electrónico y una contraseña válidos");
                         }
                       }, child: Text("Iniciar Sesión")),

@@ -27,9 +27,9 @@ class Service {
       await auth
           .signInWithEmailAndPassword(email: email, password: password)
           .then((value) => {
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => ChatScreen()))
-      });
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => ChatScreen()))
+              });
     } catch (e) {
       errorBox(context, e);
     }

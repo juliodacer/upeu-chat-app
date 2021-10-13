@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "1065195172921",
-    "project_id": "upeu-chat-app",
-    "storage_bucket": "upeu-chat-app.appspot.com"
+    "project_number": "121061907331",
+    "project_id": "upeu-chat-app-28b0c",
+    "storage_bucket": "upeu-chat-app-28b0c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1065195172921:android:c0d80bcb3c3daef518c9e8",
+        "mobilesdk_app_id": "1:121061907331:android:8c08c2f197292a142ab4b6",
         "android_client_info": {
           "package_name": "com.example.upeu_chat_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1065195172921-r8a8h2eol1ohnut70vvu18nkcq2ssctb.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.upeu_chat_app",
-            "certificate_hash": "a58aa69f3e990d56754d05edd1a3ee89ebeeb6de"
-          }
-        },
-        {
-          "client_id": "1065195172921-atcmrf45sgbk707iilqi4vll3hnirbpf.apps.googleusercontent.com",
+          "client_id": "121061907331-59mj100rd47ukhek2j4ll5e42v4nmb28.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCHiJYC_ZfR0GpFCssu7l6VJxczBMpGnSs"
+          "current_key": "AIzaSyC7AFZSYBrx6xZS8v9e-Uaad6rBNrYf4js"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1065195172921-atcmrf45sgbk707iilqi4vll3hnirbpf.apps.googleusercontent.com",
+              "client_id": "121061907331-59mj100rd47ukhek2j4ll5e42v4nmb28.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
