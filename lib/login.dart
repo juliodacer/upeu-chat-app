@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:upeu_chat_app/firebaseHelper.dart';
-import 'package:upeu_chat_app/login.dart';
 import 'package:upeu_chat_app/register.dart';
 
 class LoginPage extends StatelessWidget {
@@ -25,17 +24,15 @@ class LoginPage extends StatelessWidget {
                 children: <Widget>[
                   SizedBox(height: 20),
                   Text(
-                    "Iniciar Sesión",
-                    style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
+                    "Inicia Sesión",
+                    style: TextStyle(
+                        fontSize: 34,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown),
                   ),
                   Center(
-                      child: Card(
-                          child: SizedBox(
-                              width: 70, height: 70, child: FlutterLogo()))),
-                  Text(
-                    "UPeU Chat",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
+                      child: Image.asset('assets/logo-upeu-chat.png',
+                          width: 120, height: 120)),
                   SizedBox(
                     height: 20,
                   ),
@@ -70,13 +67,14 @@ class LoginPage extends StatelessWidget {
                     child: RaisedButton(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
-                      color: Colors.blue,
+                      color: Colors.brown,
                       child: Text(
                         "Iniciar Sesión",
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
                       onPressed: () async {
-                        SharedPreferences pref = await SharedPreferences.getInstance();
+                        SharedPreferences pref =
+                            await SharedPreferences.getInstance();
                         //Si el correo y la contraseña no estan vacias
                         if (emailController.text.isNotEmpty &&
                             passwordController.text.isNotEmpty) {
@@ -103,7 +101,8 @@ class LoginPage extends StatelessWidget {
                                 MaterialPageRoute(
                                     builder: (context) => RegisterPage()));
                           },
-                          child: Text("No Tengo una cuenta"))
+                          child: Text("No Tengo una cuenta",
+                              style: TextStyle(color: Colors.brown)))
                     ],
                   )
                 ],

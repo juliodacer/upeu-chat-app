@@ -25,16 +25,14 @@ class RegisterPage extends StatelessWidget {
                   SizedBox(height: 20),
                   Text(
                     "Regístrate",
-                    style: TextStyle(fontSize: 34, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        fontSize: 34,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.brown),
                   ),
                   Center(
-                      child: Card(
-                          child: SizedBox(
-                              width: 70, height: 70, child: FlutterLogo()))),
-                  Text(
-                    "UPeU Chat",
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
+                      child: Image.asset('assets/logo-upeu-chat.png',
+                          width: 120, height: 120)),
                   SizedBox(
                     height: 20,
                   ),
@@ -69,13 +67,14 @@ class RegisterPage extends StatelessWidget {
                     child: RaisedButton(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
-                      color: Colors.blue,
+                      color: Colors.brown,
                       child: Text(
                         "Registrar",
                         style: TextStyle(color: Colors.white, fontSize: 18),
                       ),
                       onPressed: () async {
-                        SharedPreferences pref = await SharedPreferences.getInstance();
+                        SharedPreferences pref =
+                            await SharedPreferences.getInstance();
                         //Si el correo y la contraseña no estan vacias
                         if (emailController.text.isNotEmpty &&
                             passwordController.text.isNotEmpty) {
@@ -100,7 +99,8 @@ class RegisterPage extends StatelessWidget {
                                 MaterialPageRoute(
                                     builder: (context) => LoginPage()));
                           },
-                          child: Text("Tengo una cuenta, inicar sesión"))
+                          child: Text("Tengo una cuenta, inicar sesión",
+                              style: TextStyle(color: Colors.brown)))
                     ],
                   )
                 ],
